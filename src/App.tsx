@@ -2,9 +2,10 @@ import React from "react";
 import "./App.css";
 import { Layout, Menu, Button, Space, Divider } from "antd";
 import { HomeOutlined } from "@ant-design/icons";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "pages/Home";
 import VirtualReality from "pages/VirtualReality";
+import Contact from "pages/Contact";
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
@@ -17,9 +18,11 @@ function SideMenu() {
             <Link to="/vr">Virtual Reality</Link>
           </Menu.Item>
         </SubMenu>
-        <Menu.Item>Contact</Menu.Item>
         <Menu.Item>
-          <a href="./src/assets/uploads/Resume.pdf" download>
+          <Link to="/contact">Contact</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <a href="Resume.pdf" download target="_blank">
             Resume
           </a>
         </Menu.Item>
@@ -49,6 +52,7 @@ function App() {
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/vr" element={<VirtualReality />} />
+                  <Route path="/contact" element={<Contact />} />
                 </Routes>
               </div>
             </Content>
